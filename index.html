@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do List</title>
+    <link rel="stylesheet" href="app.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background-color: black;
+            margin: 0 auto;
+            font-family: kanit;
+            color: white;
+            
+        }
+        #main{
+            margin: 0px auto;
+            width: 80%;
+            min-height: 100vh;
+            background-color: #252525;
+            display: flex;
+            /* justify-content: center; */
+            flex-direction: column;
+        }
+        #container{
+            margin: 0px auto;
+        }
+        h1{
+            margin: 0 auto;
+            /* margin-top: 40px !important; */
+            padding: 20px auto;            
+            font-weight: 400;
+            padding: 50px;
+            text-align: center;
+        }
+        #txtinput,#txtinput:focus{
+            border: none;
+            border-left: 1px solid;
+            border-top: 1px solid;
+            border-bottom: 1px solid;
+            background-color: transparent;
+            color: white;
+            width: 500px;
+            height: 40px;
+            outline: none;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        #btnAddList{
+            height: 45px;
+            width: 100px;
+            border: none;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            color: white;
+            background-color: #484492;
+            transition: 0.3s;
+        }
+        #btnAddList:hover{
+            cursor: pointer;
+            background-color: #6e6ab1;
+        }
+        ul{
+            display: table;
+            margin: 50px auto;
+            padding: 0px;
+        }
+        #txtul>li{
+            
+            font-size: 20px;
+            border-bottom: 1px #484492 solid;
+            list-style: none;
+            width: 550px;
+            margin-bottom: 20px;
+            /* text-decoration: line-through; */
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        #txtul>li>input[type="text"]{
+            background-color: transparent;
+            border: none;
+            /* border: 1px solid white; */
+            color: white;
+            font-size: 25px;
+            width: 390px;
+            font-family: kanit;
+        }
+        #txtul>li>input[type="checkbox"]{
+            margin: auto 15px;
+            width: 22px;
+            height: 22px;
+            top: 3px;
+            position: relative;
+            
+        }
+        #txtul>li>button{
+            width: 45px;
+            height: 30px;
+            font-size: 25px;
+            color: white;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            transition: 0.3s;
+            
+        }
+        #txtul>li>button:hover{
+            cursor: pointer;
+            color: #6e6ab1;
+        }
+        #counttask>li{
+            width: 200px;
+        }
+        #counttask{
+            margin: 10px auto;
+        }
+        
+       
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h1>TODO LIST</h1>
+        <div id="container">
+            <input type="text" id="txtinput" placeholder="Add your task">
+            <button id="btnAddList" onclick="addList()">Add</button>
+        </div>
+        <ul id="txtul">
+            <!-- <li>
+                <input type="checkbox" id="licheck" checked="checked" onchange="checkChange(event)">
+                <input type="text" id="txtlistinput" value="Note #1" disabled>
+                <button id="btnEdit">
+                    <i class="fa fa-edit"></i>
+                </button>
+                <button id="btnDel">
+                    <i class="fa fa-trash"></i>
+                </button>
+            </li>
+            <li>
+                <input type="checkbox" id="licheck">
+                <input type="text" id="txtlistinput" value="Note #2" disabled>
+                <button id="btnEdit">
+                    <i class="fa fa-edit"></i>
+                </button>
+                <button id="btnDel">
+                    <i class="fa fa-trash"></i>
+                </button>
+            </li>
+            <li>
+                <input type="checkbox" id="licheck">
+                <input type="text" id="txtlistinput" value="Note #3" disabled>
+                <button id="btnEdit" onclick="editlist(event)">
+                    <i class="fa fa-edit"></i>
+                </button>
+                <button id="btnDel" onclick="delList(event)">
+                    <i class="fa fa-trash"></i>
+                </button>
+            </li> -->
+        </ul>
+        <div>
+            <ul style="list-style: none;" id="counttask">
+                <li>Completed Tasks = <span id="task_Com"></span></li>
+                <li>Pending Tasks = <span id="task_Pend"></span></li>
+                <li>Total Tasks = <span id="task_T"></span></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
