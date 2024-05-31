@@ -3,6 +3,7 @@ var ulList = document.getElementById("txtul")
 var taskC = document.getElementById("task_Com")
 var taskP = document.getElementById("task_Pend")
 var taskT = document.getElementById("task_T")
+txtinput.focus()
 
 txtinput.addEventListener('keydown',function(event) {
     
