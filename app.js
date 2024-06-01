@@ -73,10 +73,12 @@ function checkChange(event){
     if(event.target.checked)
     {
         elem.style.textDecoration = "line-through"
+        elem.style.color = "#6e6ab1"
     }
     else
     {
         elem.style.textDecoration = "none"
+        elem.style.color = "white"
     }
     countTasks()
     
