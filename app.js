@@ -40,18 +40,14 @@ function addList(){
             var li_edit = document.createElement("button")
             li_edit.setAttribute('id','btnEdit')
             li_edit.setAttribute('onclick','editlist(event)')
-            var li_edit_i = document.createElement("i")
-            li_edit_i.setAttribute('class','fa fa-edit')
-            li_edit.appendChild(li_edit_i)
+            li_edit.setAttribute('class','fa fa-edit')
 
             li.appendChild(li_edit)
 
             var li_del = document.createElement("button")
             li_del.setAttribute('id','btnDel')
             li_del.setAttribute('onclick','delList(event)')
-            var li_del_i = document.createElement("i")
-            li_del_i.setAttribute('class','fa fa-trash')
-            li_del.appendChild(li_del_i)
+            li_del.setAttribute('class','fa fa-trash')
 
             li.appendChild(li_del)
 
@@ -64,7 +60,7 @@ function addList(){
 }
 
 function delList(event){
-    event.target.parentElement.parentElement.remove();
+    event.target.parentElement.remove();
     countTasks()
 }
 function checkChange(event){
@@ -85,23 +81,23 @@ function checkChange(event){
 }
 
 function editlist(event){
-    var elem = event.target.parentElement.parentElement.children[1]
-    //console.log(elem)
+    var elem = event.target.parentElement.children[1]
+    // console.log(elem)
     elem.removeAttribute("disabled")
     elem.focus();
     event.target.removeAttribute('class')
-    event.target.parentElement.removeAttribute('onclick')
     event.target.setAttribute('class','fa fa-save')
-    event.target.parentElement.setAttribute('onclick','savelist(event)')
+    event.target.removeAttribute('onclick')
+    event.target.setAttribute('onclick','savelist(event)')
 }
 function savelist(event){
-    var elem = event.target.parentElement.parentElement.children[1]
+    var elem = event.target.parentElement.children[1]
     // console.log(elem)
     elem.setAttribute('disabled','disabled')
     event.target.removeAttribute('class')
     event.target.setAttribute('class','fa fa-edit')
-    event.target.parentElement.removeAttribute('onclick')
-    event.target.parentElement.setAttribute('onclick','editlist(event)')
+    event.target.removeAttribute('onclick')
+    event.target.setAttribute('onclick','editlist(event)')
 }
 countTasks()
 function countTasks(){
